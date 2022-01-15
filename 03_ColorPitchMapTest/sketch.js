@@ -1,7 +1,7 @@
 
 
 // Test Pitch Detection Color Boxes
-
+//Git Test
 
 const model_url =
   'https://cdn.jsdelivr.net/gh/ml5js/ml5-data-and-models/models/pitch-detection/crepe/';
@@ -11,6 +11,7 @@ let freq = 0;
 let threshold = 1;
 let color1;
 let color2;
+let color3;
 
 let notes = [
   {
