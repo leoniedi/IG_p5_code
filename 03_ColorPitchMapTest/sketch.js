@@ -14,12 +14,6 @@ let color2;
 let er;
 let eg;
 let eb;
-
-//Ellipse02
-x2 = width/2;
-y2 = height/2;
-b2 = 10;
-h2 = 10;
 //-------------------------------
 
 let notes = [
