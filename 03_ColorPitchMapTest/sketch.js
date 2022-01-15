@@ -1,7 +1,4 @@
-
-
 // Test Pitch Detection Color Boxes
-//Git Test
 
 const model_url =
   'https://cdn.jsdelivr.net/gh/ml5js/ml5-data-and-models/models/pitch-detection/crepe/';
@@ -11,7 +8,19 @@ let freq = 0;
 let threshold = 1;
 let color1;
 let color2;
-let Test;
+
+//-------------------------------
+//EllipseFärbung
+let er;
+let eg;
+let eb;
+
+//Ellipse02
+x2 = width/2;
+y2 = height/2;
+b2 = 10;
+h2 = 10;
+//-------------------------------
 
 let notes = [
   {
@@ -46,16 +55,23 @@ let notes = [
     note: '-',
     freq: 261.6256 
   }
-  
 ];
 
 function setup() {
   createCanvas(1920, 1080);
+  textAlign(CENTER);
   audioContext = getAudioContext();
   mic = new p5.AudioIn();
   mic.start(listening);
   color1 = 'white';
   color2 = 'white';
+
+  //-------------------------------
+  //eColor
+  er = 255;
+  eg = 255;
+  eb = 255;
+  //-------------------------------
 }
 
 function listening() {
@@ -69,8 +85,12 @@ function draw() {
   fill(255);
   textSize(32);
   text(freq.toFixed(2), width / 2, height - 150); //FREQUENZ
-  
 
+  //-------------------------------
+  micLevel = mic.getLevel();
+  text(micLevel, width/2, 20);
+  //-------------------------------
+  
   let closestNote = -1;
   let recordDiff = Infinity;
   for (let i = 0; i < notes.length; i++) {
