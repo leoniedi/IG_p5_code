@@ -11,7 +11,7 @@ let freq = 0;
 let threshold = 1;
 let color1;
 let color2;
-let color3;
+let Test;
 
 let notes = [
   {
